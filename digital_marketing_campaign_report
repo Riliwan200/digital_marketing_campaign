@@ -37,3 +37,12 @@ from digital_marketing_campaign
 group by customerid, digital_marketing_campaign.loyaltypoints
 Limit 5;
 
+
+
+- Count the number of conversions grouped by AdvertisingPlatform
+
+select 
+Advertisingplatform,
+count(conversion)
+from digital_marketing_campaign
+group by advertisingplatform;
