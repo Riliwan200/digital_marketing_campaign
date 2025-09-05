@@ -46,3 +46,20 @@ Advertisingplatform,
 count(conversion)
 from digital_marketing_campaign
 group by advertisingplatform;
+
+
+
+
+
+- Rank customers by LoyaltyPoints within each CampaignType. 
+
+select 
+customerid,
+Loyaltypoints, 
+campaignType,
+dense_rank() Over(partition by campaigntype order by Loyaltypoints desc) as rn 
+from digital_marketing_campaign
+group by customerid, Loyaltypoints, campaignType; 
+
+
+
