@@ -2,7 +2,7 @@
 Digital Marketing Campaign Report 
 
 Purpose: 
-- This report consolidates key performance metrics of a digital marketing campaign performance metrics and b
+- This report consolidates key performance metrics of a digital marketing campaign.
 
 Highlights: 
 
@@ -16,4 +16,24 @@ EmailClicks, PreviousPurchases, LoyaltyPoints, AdvertisingPlatform, Conversion
 
 
 
+- Find the average ClickThroughRate and ConversionRate for each CampaignType
+
+select
+Cast(avg(clickthroughrate) as decimal(10,2)) as avg_clickthroughrate,
+Cast(avg(conversionrate) as decimal(10,2)) as avg_conversionrate,
+campaigntype
+from digital_marketing_campaign
+group by campaigntype;
+
+
+
+- List the top 5 customers with the highest LoyaltyPoints
+
+select 
+customerid,
+loyaltypoints,
+Row_number() Over(order by loyaltypoints desc) as rn 
+from digital_marketing_campaign
+group by customerid, digital_marketing_campaign.loyaltypoints
+Limit 5;
 
