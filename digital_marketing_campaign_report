@@ -14,6 +14,31 @@ EmailClicks, PreviousPurchases, LoyaltyPoints, AdvertisingPlatform, Conversion
   - Average Conversion Rate and more 
 
 
+Create Table digital_marketing_campaign (
+CustomerID  integer,
+Age    integer,
+Gender      Varchar,
+Income      integer,
+CampaignChannel Text,
+CampaignType    Text,
+AdSpend         Numeric,
+ClickThroughRate Numeric,
+ConversionRate   Numeric, 
+WebsiteVisits     integer, 
+PagesPerVist      Numeric, 
+TimeOnSite        Numeric,
+SocialShares       integer,
+EmailOpens         integer,
+EmailClicks        integer,
+PreviousPurchases  integer,
+LoyaltyPoints       integer,
+AdvertisingPlatform  Text,
+AdvertisingTool      Text,
+Conversion integer)
+
+
+
+
 
 
 - Find the average ClickThroughRate and ConversionRate for each CampaignType
